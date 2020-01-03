@@ -1,0 +1,149 @@
+
+-- 회원테이블
+DROP TABLE tbl_membe
+CREATE TABLE tbl_member(
+ id VARCHAR2(50) PRIMARY KEY,
+ pw VARCHAR2(30) NOT NULL,
+ name VARCHAR2(100) NOT NULL,
+ phone VARCHAR2(100),
+ regdate DATE DEFAULT SYSDATE
+ );
+ 
+ INSERT INTO tbl_member(id, pw, name, phone)
+  VALUES('admin','1234','무민이','01012345678');
+ 
+  
+ INSERT INTO tbl_member(id, pw, name, phone)
+  VALUES('user1','1234','무떡이','01036061331');
+
+ 
+ INSERT INTO tbl_member(id, pw, name, phone)
+  VALUES('user2','1234','뇽덕이','01074641103');
+
+SELECT * FROM tbl_member;
+ 
+ commit;
+ 
+ 
+-- 게시판 테이블--
+DROP SEQUENCE seq_board;
+DROP TABLE tbl_board;
+
+CREATE TABLE tbl_board(
+bno NUMBER PRIMARY KEY,
+title VARCHAR2(200) NOT NULL,
+content VARCHAR2(500) NOT NULL,
+writer VARCHAR2(100) NOT NULL,
+viewcnt NUMBER DEFAULT 0,
+regdate DATE DEFAULT SYSDATE
+);
+
+CREATE SEQUENCE seq_board 
+    START WITH 1         
+    INCREMENT BY 1     
+    NOCYCLE;
+
+INSERT INTO tbl_board(bno, title, content, writer)
+VALUES(seq_board.NEXTVAL,'라끼남','요리','김장뇽씨');
+
+
+INSERT INTO tbl_board(bno, title, content, writer)
+VALUES(seq_board.NEXTVAL,'돈잘버는법','경제','김뇽구리');
+
+
+INSERT INTO tbl_board(bno, title, content, writer)
+VALUES(seq_board.NEXTVAL,'인덕이 기르는법','요리','김쪼막지');
+
+
+INSERT INTO tbl_board(bno, title, content, writer)
+VALUES(seq_board.NEXTVAL,'놀리는게 제일 좋아','이벤트','조쨍이');
+
+INSERT INTO tbl_board(bno, title, content, writer)
+VALUES(seq_board.NEXTVAL,'세상과 단절','사진','김무국');
+
+
+COMMIT;
+
+SELECT * FROM tbl_board;
+
+SELECT * FROM tbl_board
+		 ORDER BY regdATE DESC; --DESC 는 내림차순
+     
+
+--은행테이블--
+DROP TABLE tbl_bank;
+DROP SEQUENCE seq_bank;
+
+CREATE TABLE tbl_bank(
+bno NUMBER PRIMARY KEY,
+bname VARCHAR2(50) NOT NULL,
+pw VARCHAR2(50) NOT NULL,
+money NUMBER DEFAULT 0,
+regdate DATE DEFAULT SYSDATE
+viewcont NUMBER NULL
+);
+
+
+
+CREATE SEQUENCE seq_bank
+START WITH 101       
+    INCREMENT BY 1     
+    NOCYCLE;
+
+INSERT INTO tbl_bank(bno,bname,pw)
+VALUES (seq_bank.NEXTVAL,'김무츄','1234');
+
+INSERT INTO tbl_bank(bno,bname,pw)
+VALUES (seq_bank.NEXTVAL,'김쪼막지','1234');
+
+INSERT INTO tbl_bank(bno,bname,pw)
+VALUES (seq_bank.NEXTVAL,'김장김뇽씨','1234');
+
+INSERT INTO tbl_bank(bno,bname,pw)
+VALUES (seq_bank.NEXTVAL,'무만이','1234');
+
+INSERT INTO tbl_bank(bno,bname,pw)
+VALUES (seq_bank.NEXTVAL,'무떡베베리','1234');
+
+
+SELECT * FROM tbl_bank;
+
+COMMIT;
+
+
+--엔터테이먼트 테이블 --
+DROP TABLE tbl_enter ;
+DROP SEQUENCE seq_enter;
+
+CREATE TABLE tbl_enter(
+    ano VARCHAR2(20) PRIMARY KEY, 
+    aname VARCHAR2(50) NOT NULL,  
+    major VARCHAR2(50) NOT NULL, 
+    groupyn VARCHAR2(50) NOT NULL, 
+    groupnm VARCHAR(100),          
+    sal NUMBER NOT NULL,           
+    regdate DATE DEFAULT SYSDATE
+
+);
+
+
+CREATE SEQUENCE seq_enter 
+    START WITH 1         
+    INCREMENT BY 1      
+    NOCYCLE;             
+    
+INSERT INTO tbl_enter(ano, aname, major, groupyn, groupnm, sal)
+VALUES(seq_enter.NEXTVAL, 사나',가수','Y','트와이스',9900);
+INSERT INTO tbl_enter(ano, aname, major, groupyn, groupnm, sal)
+VALUES(seq_enter.NEXTVAL, 정연',가수','Y','트와이스',9900);
+INSERT INTO tbl_enter(ano, aname, major, groupyn, groupnm, sal)
+VALUES(seq_enter.NEXTVAL, 조이',가수','Y','레드벨벳',9900);
+INSERT INTO tbl_enter(ano, aname, major, groupyn, groupnm, sal)
+VALUES(seq_enter.NEXTVAL, 채연',가수','Y','아이오아이',9900);
+INSERT INTO tbl_enter(ano, aname, major, groupyn, groupnm, sal)
+VALUES(seq_enter.NEXTVAL, 지효',가수','Y','트와이스',9900);
+
+commit;
+
+SELECT * FROM tbl_enter;
+
