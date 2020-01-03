@@ -87,6 +87,8 @@ viewcont NUMBER NULL
 
 CREATE SEQUENCE seq_bank
 START WITH 101       
+
+
     INCREMENT BY 1     
     NOCYCLE;
 
@@ -147,3 +149,33 @@ commit;
 
 SELECT * FROM tbl_enter;
 
+
+-- 제품판매 테이블 --
+
+ 
+ DROP TABLE TBL_product;
+ DROP SEQUENCE seq_product;
+ 
+ CREATE TABLE tbl_product(
+     pno NUMBER PRIMARY KEY,
+     pname VARCHAR2(100) NOT NULL UNIQUE,
+     company VARCHAR2(100) NOT NULL,
+     price NUMBER NOT NULL,
+     cnt NUMBER DEFAULT 0,
+     regdate DATE DEFAULT SYSDATE
+     
+ );
+ 
+ CREATE SEQUENCE seq_product
+  START WITH 1001
+   INCREMENT BY 1
+   NOCYCLE;
+
+INSERT INTO tbl_product(pno, pname, company, price, cnt)
+VALUES(seq_product.NEXTVAL, '쿠쉬쿠시', '오리온' , 3000, 5);
+
+INSERT INTO tbl_product(pno, pname, company, price, cnt)
+VALUES(seq_product.NEXTVAL, '빼빼로', '롯데제과' , 1000, 1);
+
+commit;
+SELECT * FROM tbl_product;
