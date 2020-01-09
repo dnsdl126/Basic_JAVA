@@ -1,0 +1,143 @@
+-- JOIN
+-- 1. 둘 이상의 테이블을 연결하여 하나의 가상테이블을 만드는 것
+-- 2. 보통 둘 이상의 행들의 공통된 값 PK 및 FK값을 사용 하여 조인한다(보통이지 무조건은 아니다)
+-- 3. 두개의 테이블을 SELECT 문장 안에서 조인하려면 적어도 하나의
+--    컬럼이 두 테이블 사이에서 공유(관계) 되어야 한다
+
+SELECT * FROM emp; -- deptno : FK키
+SELECT * FROM dept; -- deptno : PK키
+
+-- ex) 신입사원은 반드시 하나이상의 부서에 소속되어야 한다.
+--     사원은 무조건 부서가 필요 -> 없는 부서로는 소속될수 없다.(반드시 관계를 맺어줘야 한다)
+
+--JOIN 종류(2개 이상의 테이블을 결합)
+
+--★★★★★★1.Equi Join(동등조인)(가장많이 사용)
+     - 컬럼이 같은게 아니라 컬럼의 값이 같은 것끼리 매칭
+-- ex)dept 테이블 과 emp테이블을 조인
+
+
+SELECT emp.empno, emp.ename, dept.dname         -- 3번 : select 해라 
+FROM dept e, emp d                                                 -- 1번 : 어느 테이블에서
+WHERE  dept.deptno = emp.deptno;                        -- 2번 : 같은column 으로 join 해라
+
+--column
+SELECT emp.empno, emp.ename as 사원이름, dept.dname
+FROM dept, emp
+WHERE dept.deptno = emp.deptno;
+
+--TABLE
+SELECT e.empno, e.ename as 사원이름, d.dname
+FROM dept d, emp e
+WHERE d.deptno = e.deptno;
+
+
+
+--2. Inner Join = Equi Join
+--ex)dept테이블과 emp테이블을 Inner 조인
+-- WHERE 절이 ON절 => JOIN의 조건
+SELECT e.empno, e.ename, d.dname
+FROM dept d
+INNER JOIN emp e
+ON d.deptno = e.deptno;
+
+-- 3. Natrual Join == Equi Join
+--ex)dept 테이블과 emp테이블을 Natural 조인
+-- 동일한 컬럼을 내부적으로 모두 조인,ON절(동등조건)이 생략 가능
+-- where 절이 없다(자동으로 같은것을 찾기때문에)
+ -- USING을 사용하면 컬럼을 선택해서 조인 가능 (WHERE절 역할)
+SELECT e.empno, e.ename, d.dnme
+FROM dept d
+NATURAL JOIN emp e;
+USING(deptno); 
+USING 이란?
+-- 동일한 이름을 가지는 컬럼은 모두 조인됨으로
+-- 단 Natural 과 using은 같이 사용이 불가하다
+                 -- Natural Join에서 USING절을 사용하고 싶으면 Inner Join으로 변경고 사용 해야한다
+                 -- Natural Join을 Inner Join으로 변경하는 방법은 Natraul만 지우면 된다
+               
+
+                 
+--4. Non-Equi Join(거의 안쓴다)
+--테이블의 어떤 컬럼도 Join할 테이블의 컬럼과 일치하지 않을 때 사용
+--조인조건은 동등(=) 이외의 연산자를 사용합니다.
+--BETWEEN AND, IS NULL, IS NOT NULL, IN, NOT IN
+--거의 사용하지 않는다.
+SELECT * FROM salgrade; --> 등급별 연봉최저액~ 최고액
+--ex) emp테이블과 salgrade테이블의 Non-Equi Join
+SELECT e.ename, e.sal, s.grade
+FROM emp e, salgrade s
+WHERE e.sal
+BETWEEN s.losal
+AND s.hisal;
+
+--5. self Join
+-- 테이블은 하나인데 또다른 나를 복제해서 조인
+-- Equi Join과 같으나 하나의 테이블에서 조인이 일어난다는 것이 다르다.
+-- 같은 테이블에 대해 두개의 alias를 사용하여 FROM절에 두개의 테이블 사용하는 것 처럼 조인한다.
+-- 사원의 매니저 이름을 조회하는 Self Join
+empno(사원번호)   ename(사원이름)  mgr(매니저번호 == 사원번호)
+  100                              도비                 103
+  101                              동키                 102
+  102                              골덴                  - 
+
+사원번호  사원 이름  상사이름
+100               도비        골덴
+
+SELECT e.ename, a.ename as Manager
+FROM emp e, emp a
+WHERE e.empno = a.mgr;
+
+
+
+--※.Cross Join = Cartesian Product(오류?)
+-- 조건을 생략할 경우 모든 경우의 수를 다 찾아준다.
+-- 검색하고자 했던 데이터뿐 아니라 조인에 사용된 테이블들의 모든 데이터가 반환 되는 현상
+--Cartesian Product는 조인 조건의 정의하지 않는 경우 발생한다.
+--CROSS JOIN을 사용하면 Cartesian Product값을 얻을 수 있따
+-- ex) CROSS JOIN 절을 이용하여 Cartesian Product 값을 얻는 예제
+SELECT e.empno, e.ename, d.dname
+FROM dept d CROSS JOIN emp e;
+--emp:14개, dept:4개 => 14*4 = 56건출력
+
+
+
+--7.Outer Join (2번째로 많이 사용 )
+--Equi Join은 조인을 생성하려는 두개의 테이블을 한쪽 컬럼에 값이 없다면 데이터를 반환하지 못함
+--null로 채워서 데이터를 표시 
+-- 동일 조건에서 조인 조건을 만족하는 값이 없는 행들을 조회하기 위해 Outer Join을 사용
+--Outer Join 연산자는 (+)이다.
+--조인시 값이 없는 조인측에 (+)를 위치 시킨다.
+--Outer Join연산자는 표현식의 한 편에만 올 수 있다.
+
+
+--  ex) Equi Join과 Outer Join의 비교
+--   ex1) Equi Join으로 부서 번호를 조회
+SELECT DISTINCT(e.deptno), d.deptno, d.dname
+FROM emp e, dept d
+WHERE e.deptno = d.deptno;
+
+--   ex2) Outer Join으로 부서 번호를 조회
+SELECT DISTINCT(e.deptno), d.deptno, d.dname
+FROM emp e, dept d
+WHERE e.deptno(+) = d.deptno;
+
+==> Equi Join은 값이 없는 경우 배제 되지만 Outer Join 은 null 로 표시
+
+--   ex3)LEFT Outer Join (LEFT에 값이 다있다)
+SELECT DISTINCT(e.deptno), d.deptno, d.dname
+FROM dept d
+LEFT OUTER JOIN emp e
+ON d.deptno = e.deptno;
+
+--   ex4)RIGHT Outer Join (RIGHT에 값이 다있다)
+SELECT DISTINCT(e.deptno), d.deptno, d.dname
+FROM emp e
+RIGHT OUTER JOIN dept d
+ON e.deptno = d.deptno;
+
+--   ex5)FULL Outer Join
+SELECT DISTINCT(e.deptno), d.deptno, d.dname
+FROM emp e
+RIGHT OUTER JOIN dept d
+ON e.deptno = d.deptno;
