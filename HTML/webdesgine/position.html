@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>position.html</title>
+	 <style type="text/css">
+	 	/* css:Postion
+	 	    1. static(정적위치 : 태그 선언해서 생성되는 기본자리)
+	 	        : 지정하지 않은 기본 상태
+
+	 	    2. relative
+	 	        : static 위치를 기준으로 위치를 지정(상대 위치)
+	 	        : top, left, right, botto, 으로  static 위치에서 상대적으로 
+	 	          위치를 지정 (나를 기준으로)
+
+	 	    3. absolute
+	 	        :body또는 기준을 잡고 위치를 지정(절대 위치)
+	 	        :static 속성을 제외 한 상위의 position 속성을 갖고 있는
+	 	        태그를 기준으로 절대 위치를 잡음, top, left, right, bottom
+	 	        사용 가능 상위가 static만 있다면 body를 기준으로 잡음 
+	 	        (고정하싶은 부모한테 ex) 상의 - 니트,셔츠, 자켓 
+	 	           -> 부모한테는 static을 제외한 속성이 들어간다
+	 	           -> 부모한테  static이 되어있으면 상위태그로 올라간다 최대  body 태그까지)
+
+	 	    4. fixed
+	 	        : 스크린을 기준으로 위치가 고정
+	 	        : fix(고정위치) 화면상 즉 스크린 전체크기에 대한 고정위치를 잡음,
+	 	          보통 헤더나 푸터 사이드 메뉴 고정시 사용
+	 	           (상의 하의 눌러도 고정되어있는거 )*/
+	 	           * {
+	 	           	margin: 0; padding: 0; }
+	 	           body *{  
+					margin:0; padding: 0; border: solid silver;
+	 	           	font-size: 25px;
+	 	           }		 	          
+	 	           .imgbox1 {
+	 	           	width: 70px; height: 70px;
+	 	           	background-image: url(C:/Users/504-08/Desktop/이미지/v피카추.png);
+	 	           }
+	 	           .imgbox2 {
+	 	           	width: 140px; height: 140px;
+	 	           	background-image: url(C:/Users/504-08/Desktop/이미지/꼬부기.png);
+	 	           }
+	 	           .box1 { width: 50px; height: 25px; }
+	 	           .box2 { width: 100px; height: 50px; background-color: yellow; }
+	 	           .block{display: block;}
+	 	           .inline {display: inline;}
+	 	           .hidden{visibility: hidden;} /*숨기는 기능이지 없는것이 아니다 투명망토*/
+	 	           .float-r{float: right;}
+	 	           #area{
+	 	           	position: absolute;
+	 	           	width: 600px; height: 400px;
+	 	           	border: dotted silver;
+	 	           }
+	 	           #ddd{opacity: 0.4}
+	 	           #eee{padding: 25px 10px 25px 90px;}
+	 	           #fff{
+	 	           	position: absolute;
+	 	           	top: 20px; right: 40px;
+	 	           	border-style: ridge;
+	 	           	border-width: 10px ;
+	 	           	/*border-color: black;
+	 	           	  border: 10px rideg black*/
+
+	 	           }
+	 	           #ggg{
+	 	           	position: fixed; /*한단계 더 앞으로 나온 상태 */
+	 	           	bottom: 20px;
+	 	           	right: 40px;
+	 	           	box-shadow: 4px 4px 10px 6px orangered;
+	 	           }
+	 	           #hhh{
+	 	           	position: relative;
+	 	           	top :-50px;
+	 	           	left: 200px;
+	 	           	border-radius: 20px;
+	 	           }
+
+	 </style>
+</head>
+<body>
+	<div id="area">
+		<div class="imgbox1 block">aaa</div>
+		<div class="imgbox1 inline">bbb</div>
+		<div class="imgbox1 inline">ccc</div>
+		<div id="ddd" class="imgbox1 block">ddd</div>
+		<div id="eee" class="box2 block">eee</div>
+		<div id="fff" class="imgbox2 block">fff</div>
+		<div id="ggg" class="imgbox1 block">ggg</div>
+		<div id="hhh" class="imgbox2 block">hhh</div>
+		<div class="imgbox1 block float-r">kkk</div>
+		<div class="imgbox1 hidden float-r">mmm</div>
+		<div class="imgbox1 block float-r">nnn</div>		
+	</div>
+
+</body>
+</html>

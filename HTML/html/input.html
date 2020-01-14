@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>input(입력) 관련태그 </title>
+</head>
+<body>
+	<form name="" action="" method="" >
+		<input type="text" name="" placeholder="text" value="약오르지" readonly="readonly"><br><!--readonly: 읽기전용-->
+		<input type="password" name="" placeholder="password"><br>
+		<input type="hidden" name="" placeholder="hidden"><br> <!--hidden :사용자 눈에는 안보이지만 자바에게 보내줘야 하는 동작들 -->
+		<input type="search" name="" placeholder="search"><br> <!--search : 값이 삭제(reset)되는 x버튼만 추가 -->
+		<input type="url" name="" placeholder="url"><br> <!--url :유효성 체크-->
+		<input type="email" name="" placeholder="email"><br> <!--email :유효성 체크-->
+		<input type="tel" name="" placeholder="tel"><br> <!--tel : 유효성 체크-->
+		<input type="number" name="" placeholder="number"><br><!--number : 숫자 증가-->
+		<input type="range" name="" placeholder="range"><br><!--range : 볼륨..?-->
+		
+		<hr>
+		<input type="file" name=""><br>
+
+		<label><input type="radio" name="subject">JAVA</label> <!--radio :체크하는 동그라미 , 선택지중 하나만 선택 가능 , 단 그룹으로 묶어야 한다 -->
+		<label><input type="radio" name="subject">Python</label>
+		<label><input type="radio" name="subject">Oracle</label><br>
+
+	
+		<label><input type="checkbox" name="subject">복숭아</label> <!--checkbox: 다중 선택-->
+		<label><input type="checkbox" name="subject">포도</label>
+		<label><input type="checkbox" name="subject">수박</label>
+		<hr>
+
+		<input type="button" name="name" value="제출"> <!--자체적으로는 아무 동작을 하지 않고 내가 입력한 함수대로 작동한다 (사용자 정의 버튼,유효성체크가 가능)-->
+		<input type="submit" name="name"> <!--form태그 action 목적지로 데이터 전달 (유효성 체크가 불가능 하다 ),유효성 체크가 필요없는 검색등에 사용  -->
+		<input type="reset" name="name"> <!-- reset: 값을 초기화 --> 
+	</form>
+
+</body>
+</html>

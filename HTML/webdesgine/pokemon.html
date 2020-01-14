@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>pokemon.html:포켓몬스터 카드 도감</title>
+	<link rel="stylesheet" type="text/css" href="../common.css">
+    <style type="text/css">
+    	.card{
+    		border:1px solid rgba(0, 0, 0, 0.3);
+    		width: 250px;   /*content*/
+    		height: 300px;
+    		background-color: white;
+    		box-sizing: border-box; /*t사이즈 고정 (가로, 세로) - 현재 가로 길이는 content + padding + border = 250 + 14 + 2 = 266px
+    		                                                   - box-sizing:border-box를 주면 width 250px고정 250px = 234 + 14 + 2 */
+    		margin: 20px;
+    		box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    		padding: 7px;
+    		display: inline-block;
+                   
+    	}
+        .type_info{
+            text-align: right; /*풀 독을 오른쪽으로 정렬*/
+        }
+        .type{
+            width: 50px;
+            height: 20px;
+            color: white;
+            font-size: 12px;
+            display: inline-block;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 10px;
+
+        }
+        .grass {
+            background-color: #78C850;
+
+        }
+        .poison{
+            background-color: #A040A0;
+        }
+        .name_info{
+            font-weight: bold;
+            border-bottom: 1.5px solid rgba(0,0,0,0.2);
+            padding: 5px 0;
+          }
+    	.pokemon  {
+            margin: 0 auto;  /*상하는 0*/
+            display: block;
+        }
+        .detail_info{
+            margin-bottom: 5px;
+        }
+        table, th, td {
+            border: 1px solid lightgray;
+        }
+
+        table{
+            width: 225px;
+            margin: 0 auto;
+            background-color: #D4F4FA;
+            box-sizing: border-box;
+            border-collapse: collapse;
+
+
+        }
+        th {
+            text-align: left;
+            width: 60px;
+        }
+        td {
+            text-align:right;
+        }
+        div.link_info{
+            border-top: 1px solid rgba(0,0,0,0.2);
+            text-align :right;
+            padding-top: 3px; 
+        }
+        span.like_span{
+            background-image: url('../img/하트.png');
+            background-repeat: no-repeat; /* pading + Content = background*/
+            line-height: 18px;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+	<div class="card">
+	   <div class="type_info">
+            <span class="type grass">풀</span>
+            <span class="type poison">독</span>           
+       </div>
+       <div class="name_info">
+          NO.001 이상해씨          
+       </div>
+       <div class="img_info">
+           <img src="../img/이상해씨.png" class="pokemon">
+       </div>
+       <div class="detail_info">
+            <table>
+                <tr>
+                    <th>분류</th>
+                    <td>씨앗 포켓몬</td>
+                </tr>
+                <tr>
+                    <th>키</th>
+                    <td>0.7m</td>
+                </tr>
+                <tr>
+                    <th>몸무게</th>
+                    <td>6.9kg</td>
+                </tr>
+            </table>
+           
+       </div>
+       <div class="link_info">
+         <span class="like_span">895</span>
+      </div>
+    </div>
+
+</body>
+</html>

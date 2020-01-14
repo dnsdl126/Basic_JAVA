@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>float.html: 포지셔닝</title>
+
+    <style type="text/css">
+
+        .squ{
+
+        width: 200px;               /*투명박스 가로사이즈 */
+
+        height: 200px;             /*투명박스 세로사이즈 */
+
+        font-size: 25px;           /*투명박스 안 폰트사이즈 */
+
+        color: white;                /*투명박스 안 폰트색상 */
+
+        text-align: center;       /*투명박스 안 폰트정렬 */
+
+        line-height : 200px;    /*줄간격*/
+
+        background-color: gray;   /*투명박스 안 박스컬러 */  /*가장가까운것부터 우선 실행하므로 ddd만 회색으로 나온다 */
+
+        float: left;                  /* 오늘의 주인공 플로트, 박스들을 정렬한다. 모두모아서 왼쪽으로 */
+
+        }
+
+        
+
+        #dred{ background-color: red;}
+
+        #dblue{ background-color: blue;}
+
+        #dgreen{ background-color: green;}
+
+        #ddd{clear:both;}
+
+        
+
+    </style>
+
+</head>
+
+<body>
+
+    <div>
+
+        <div class="squ" id="dred"> aaa </div>
+
+        <div class="squ" id="dblue"> bbb </div>
+
+        <div class="squ" id="dgreen"> ccc </div>
+
+        <div class="squ" id="ddd"> ddd </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>amimation.html : 애니메이션 효과 </title>
+	<style type="text/css">
+		p{
+			font-size: 25px;
+		}
+		span{
+			font-size: 100px;
+			color: orangered;
+			font-weight: bold;
+			/*설정할 애니메이션 이름*/
+			animation-name: twinke;
+			/*애니메이션의 반복 횟수*/
+			animation-iteration-count: infinite;
+			/*애니메이션의 실행 시간*/
+			animation-duration: .1s;
+		}
+		
+		@keyframes twinke{
+			0% {opacity: 0;}
+		  100% {opacity: 1;}
+
+		  /*form{opacity: 0;}*/
+		  /*to{opacity: 1;}*/
+		}
+	</style>
+</head>
+<body>
+	<p><span>키다리</span>동선이????호호호</p>
+
+</body>
+</html>
