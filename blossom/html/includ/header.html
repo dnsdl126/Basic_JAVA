@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>BLSSOM</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+	<style type="text/css">
+		div.header_wrap {
+			width: 100%;
+			background: white;
+         box-shadow: 0 0 1px 1px rgba(20, 23, 28, .1), 0 3px 1px 0 rgba(20, 23, 28, .1);
+         z-index: 999; /* z-index: 숫자가 클수록 가장 앞에 나와라 */
+         /*요소배치 flex box : */
+
+		}
+      div.header_content{
+         width: 1400px;
+         margin: 0 auto;
+         height: 65px;
+         box-sizing: border-box;
+         border-left: 1px solid red;
+         border-right: 1px solid red;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+      .header_content_logo {background-color: red; }
+      .header_content_search {background-color: blue; }
+      .header_content_nav {background-color: green; }
+      .header_content_member {background-color: yellow; }
+	</style>
+</head>
+<body>
+  <header>
+   	<div class="header_wrap">
+   		<div class="header_content">
+   			<div class="header_content_logo">
+               <img src="">
+                <span>BLOSSOM</span>   
+               </div>   				 
+   				<div class="header_content_search">물음표</div>
+   				<div class="header_content_nav">
+   					<a href="#">스킨케어</a>
+   					<a href="#">바디케어</a>
+   					<a href="#">이벤트</a>
+   					<a href="#">리뷰</a>
+   					<a href="#">브랜드소개</a>
+               </div>
+   				<div class="header_content_member">
+   					<a href="#">로그인</a>
+   					<a href="#">회원가입</a>
+               </div>   
+   		</div>
+   	</div>
+  </header>
+</body>
+</html>
