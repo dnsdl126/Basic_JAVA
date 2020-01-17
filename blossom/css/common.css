@@ -1,0 +1,83 @@
+/*구글 웹폰트*/
+		@import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR&display=swap');
+/*공통사항*/
+ 
+     * {box-sizing: border-box;}
+		body {
+
+			background-color: #F6EDE6;
+			font-family :'Noto Serif KR', serif; 
+			margin: 0;
+			padding: 0;
+			font-size: 14px;
+			color: #222222;		
+		}
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		a {
+			color: inherit; /*부모한테 상속받은 색상을 사용하세요 */
+			text-decoration: none;
+		
+		}
+			/*글자색, 배경색 */
+		.f-color1{ color: #3885CA; }
+		.f-color2{ color: #EBA444; } 
+		.f-color3{ color: #F6EDE6; }
+		.bg-color1 { background-color: #3885CA; }
+		.bg-color2 { background-color: #EBA444; }
+		.bg-color3 { background-color: #F6EDE6; }
+
+     /*버튼들 */
+	  button.btn{
+            display: inline-block;
+            font-weight: 600;
+            text-align: center;
+            font-size: 15px;
+            border-radius: 5px;
+            cursor: pointer; /*버튼으로 마우스가 가면 손가락 모양으로 바뀌도록 */
+            padding: 11px 12px;
+            border: 1px solid transparent;           
+      }
+      button.btn-basic {
+         border: 1px solid #686f7a;
+         background-color: white;
+         color: #686f7a;
+      }
+      button.btn-basic:hover {
+         color: #2f3138;
+         border-color: #2F3138;
+      }
+      button.btn-primary {
+         
+         background-color: #9BDB94;
+         color: white;
+      }
+      button.btn-primary:hover {
+         background-color: #1F8AD8;
+         border-color: transparent;
+      }
+      button.btn-support {
+        
+         background-color: #7DD481;
+         color: white
+      }
+      button.btn-support:hover {
+         background-color: #81CBD5;
+         border-color: transparent;
+      }
+
+       /*Text에 밑줄 쳐지는 CSS 효과 */
+      .magicline:after {
+         content : '';
+         display: block; /*가로다 내꺼 */
+         width: 0;
+         height: 2.5px;
+         background-color: #7DD481;
+         transition: width .3s; /*하려고 하는 행위의 지연시간 */
+      }
+      .magicline:hover:after {
+         width: 100%;
+      }
