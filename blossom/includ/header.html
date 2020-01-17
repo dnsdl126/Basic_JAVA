@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>BLSSOM</title>
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+   <script src="https://kit.fontawesome.com/66fbac40f5.js" crossorigin="anonymous"></script>
+
+	<style type="text/css">
+		div.header_wrap {
+			width: 100%;
+			background: white;
+         box-shadow: 0 0 1px 1px rgba(20, 23, 28, .1), 0 3px 1px 0 rgba(20, 23, 28, .1);
+         z-index: 999; /* z-index: 숫자가 클수록 가장 앞에 나와라 */
+         /*요소배치 flex box : */
+
+		}
+      div.header_content{
+         width: 1400px;
+         margin: 0 auto;
+         height: 65px;
+         box-sizing: border-box;        
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+      .header_content_logo {}
+      .header_content_search {}
+      .header_content_search_group {
+          display: flex;
+          align-items: center;
+          background-color: #f2f3f5;
+          border-radius: 20px;
+      }
+      .hearder_content_search_input {
+         background-color: transparent;        
+         border-color: transparent;
+         width: 220px;
+         height: 44px;
+         font-size: 13px;
+         border-radius: 2px;
+         padding: 10px 12px;
+         outline: none; /*input 태그 Focus시 파랑테두리 */
+      }
+      .hearder_content_search_btn{
+         
+         border-color: transparent;
+         background-color: transparent;
+         width: 44px;
+         height: 44px;
+         cursor: pointer;
+         color: #40BF75;
+         border-top-right-radius: 20px;
+         border-bottom-right-radius: 20px;
+         
+
+      }
+      .hearder_content_search_btn:hover {
+         background-color: #1F8AD8;
+         color: white;
+
+      }
+      .header_content_nav {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         width: 486px;
+      }
+      .header_content_nav > div {
+        
+      }
+      .header_content_member {  
+
+               /*width: 160px;*/
+               display: flex;              
+               align-items:center;
+               justify-content: space-between;
+               flex-direction: row; /* default(생략가능)*/
+             }
+      .header_content_member > div {
+         padding: 10px 0px 10px 3px;
+      }
+      .header_content_dropdown_group {
+         position: relative;
+
+      }  
+      .header_content_dropdown_wrap:hover .header_dropdown {
+         display: block;
+      }   
+      .header_content_dropdown_group > a{
+         display: inline-block;
+         padding: 12px 15px;
+         font-weight: 400;
+         border: 1px solid transparent;
+         border-radius: 2px;
+         height: 45px;
+         color: #3D87C1;
+         line-height: 19px;
+
+      }
+      .header_content_dropdown_group:hover > a,
+      .header_content_member_cart:hover > a {
+         background-color: #f2f3f5;
+         border-color: #1F8AD8;
+         
+      }
+      .header_content_member_cart> a {
+         display: inline-block;
+         width: 45px;
+         height: 45px;
+         border-radius: 50%;
+         color: #1F8AD8;
+         border: 1px solid transparent;
+         text-align: center;
+         padding: 12px;
+         line-height: 19px;
+      }
+
+      .hearder_content_logo_img {
+         width: 130px;
+         vertical-align: middle;
+      }
+      .header_dropdown_menu {
+         border-bottom-left-radius: 2px;
+         border-bottom-right-radius: 2px;
+         box-shadow: 0 4px 16px rgba(20, 23, 28, .25);
+        background-color: white;        
+        padding: 10px 0;
+         border-radius: 10px;
+        
+
+      }
+      .header_dropdown_menu a {
+         display: inline-block;
+         font-size: 15px;
+         color: #505763;
+         text-align: center;
+         padding: 5px 15px;
+         font-weight: 400;
+         width: 130px;
+         position: relative;
+        z-index: 100;
+      }
+       .header_dropdown_menu a:hover {
+         color: #007791;
+         background-color: #f2f3f5;
+       }
+      .header_dropdown {
+         position: absolute;
+         top: 53px;
+         left: 0;
+         display: none;
+      }
+      .arrow {
+         position: absolute;
+         top: -4px;
+         left: 16px;
+         width: 15px;
+         height: 15px;
+         transform: rotate(45deg);
+         background-color: white;
+         border-color: transparent transparent #FFF transparent;
+         z-index: 99;
+      }
+     
+	</style>
+</head>
+<body>
+  <header>
+   	<div class="header_wrap">
+   		<div class="header_content">
+   			<div class="header_content_logo">
+               <a href="#">
+                  <img class="hearder_content_logo_img" src="../../img/linkedin_banner_image_1.png" alt="로고이미지">
+                  
+                </a>               
+               </div>   				 
+   				<div class="header_content_search">
+                  <form name="frm_search" action="" method="GET">
+                     <div class="header_content_search_group">
+                        <input type="text" placeholder="상품을 검색해 보세요" name="keyword" class="hearder_content_search_input">
+                        <button type=" button" class="hearder_content_search_btn"><i class="fas fa-search"></i></button>
+                     </div>
+
+                  
+                  </form>                  
+               </div>
+   				<div class="header_content_nav">
+                  <div class="header_content_dropdown_wrap">
+      					<div class="header_content_dropdown_group ">
+                        <a href="#" class="magicline">스킨케어</a>
+                        <div class = "header_dropdown">
+                            <div class="arrow"></div>
+                              <ul class="header_dropdown_menu">
+                                 <li><a href="#" >스킨</a></li>
+                                 <li><a href="#" >토너</a></li>
+                                 <li><a href="#" >에센스</a></li>
+                                 <li><a href="#" >크림</a></li>
+                              </ul>
+                        </div> 
+                     </div>
+                  </div>
+   					<div class="header_content_dropdown_wrap">
+                  <div class="header_content_dropdown_group "><a href="#" class="magicline">바디케어</a>
+                      <div class = "header_dropdown">
+                            <div class="arrow"></div>
+                              <ul class="header_dropdown_menu">
+                                 <li><a href="#" >미스트</a></li>
+                                 <li><a href="#" >바디로션</a></li>
+                                 <li><a href="#" >바디크림</a></li>
+                              </ul>
+                        </div> 
+                  </div>
+               </div>
+                  <div class="header_content_dropdown_wrap">
+   					<div class="header_content_dropdown_group "><a href="#" class="magicline">헤어</a>
+                         <div class = "header_dropdown">
+                            <div class="arrow"></div>
+                              <ul class="header_dropdown_menu">
+                                 <li><a href="#" >샴푸</a></li>
+                                 <li><a href="#" >린스</a></li>
+                                 <li><a href="#" >헤어팩</a></li>
+                              </ul>
+                        </div> 
+                  </div>
+               </div>
+   					<div class="header_content_dropdown_group"><a href="#" class="magicline">리뷰</a></div>
+   					<div class="header_content_dropdown_group"><a href="#" class="magicline">브랜드소개</a></div>
+               </div>
+   				<div class="header_content_member">
+                  <div class="header_content_dropdown_wrap">
+                    <div class="header_content_dropdown_group">
+                      <!-- 네비게이션 -->
+                     <a href="#"><i class="far fa-smile"></i>&nbsp;마이페이지</a>
+                        <!--dropdwon 메뉴 -->                        
+                        <div class = "header_dropdown">
+                         <div class="arrow"></div>
+                           <ul class="header_dropdown_menu">
+                              <li><a href="#" >회원정보수정</a></li>
+                              <li><a href="#" >위시리스트 </a></li>
+                              <li><a href="#" >주문확인</a></li>
+                              <li><a href="#" >고객센터</a></li>
+                           </ul>
+                        </div>                        
+                    </div>   
+                  </div>
+                  <div>
+                     <div class="header_content_member_cart">
+                        <a href="#"><i class="fas fa-shopping-bag"></i></i></a>
+                     </div>
+                  </div>
+
+   					<div><button type ="button" class="btn btn-basic">로그인</button></div>
+                  <div><button type ="button" class="btn btn-primary">회원가입</button></div>   					
+               </div>   
+   		</div>
+   	</div>
+
+
+  </header>
+</body>
+</html>
