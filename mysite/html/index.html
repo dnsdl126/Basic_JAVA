@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>show myself</title>
+	<script src="https://kit.fontawesome.com/66fbac40f5.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/effect.css">
+	<style type="text/css">
+		
+			@import url('https://fonts.googleapis.com/css?family=Patua+One&display=swap');
+
+		.wrap{
+			border: 1px solid black;
+			max-width: 1400px;
+			display: flex;
+			justify-content: center;
+			box-sizing: border-box;
+			padding: 25px;
+			margin: 25px auto;
+		}
+		/*사이드 내용*/
+		.side_wrap{
+			border:1px solid red;
+			width: 450px;
+			height: 1000px;
+			margin-right: 25px;
+		}
+		.side_picture {
+			background-image: url("../img/20200117_114501.jpg");
+			background-repeat: no-repeat;
+			height: 300px;
+			position: center center;
+			background-size: 100%
+
+		}
+		.side_intro-group{
+			padding: 15px;
+		}
+		.name {
+			font-size: 30px;
+			font-family: 'Patua One', cursive;
+		}
+		.intro{
+			font-size: 15px;
+			line-height: 22px;
+		}
+		.common_panel{
+			border-radius: 2px;
+			background-color: white;
+		}
+		.side_intro{
+			border-radius: 2px;
+			background-color: white;
+
+		}
+		.side_personal {
+			border-top: 1px solid #eee;
+			padding: 15px 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 120px;
+
+		}
+		.side_personal_group {
+			padding: 0 15px;
+		}	
+		.side_personal i {
+			color: #548D96;
+			width: 20px;
+
+		}
+		.side_personal_gorup{
+			padding: 0 15px;
+		}
+		
+		
+		.side_sns {
+			border-top : 1px solid #eee;
+			padding: 15px 0;
+			
+		}
+		.nav{
+			margin-top: 25px;
+			
+		}
+		.menu_title{
+			background-color: #548D96;
+			color: white;
+			font-weight: bold;
+			padding: 8px 15px;
+			font-size: 18px;
+			border-top-right-radius: 2px;
+			border-top-left-radius: 2px;
+			display: flex;
+			align-items: center;
+		}
+		.menu_title i {
+			width: 20px;
+		}
+
+		/*소개내용*/
+		.cotent_wrap{
+			border:1px solid blue;
+			width: 850px;
+			height: 1000px;
+		}
+
+
+		
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<aside>
+			<div class="side_wrap">
+				<div class="common_panel layer">
+					<div class="side_picture "></div>
+					<div class="side_intro-group">
+						<div class="name">UnYi Cho</div>
+						<div class="intro">
+							I'm Junior developer<br>							
+						     I learned java, sqldeveloper, sublim text, HTML  
+							  for web developing<br>							
+						</div>
+					   </div>
+					     <div class="side_personal_group">
+					        <div class="side_personal">
+					        	<div><i class="fas fa-briefcase"></i>web Programmer</div>
+					        	<div><i class="fas fa-map-marker-alt"></i>Gwang-Ju, public of Korea</div>
+					        	<div><i class="far fa-envelope-open"></i>dnsdl126@gmail.com</div>
+					        	<div><i class="fas fa-phone-square"></i>010-3606-1331</div>
+					        </div>
+					        <div class="side_sns">
+					        	<div class="middle">
+		 							<a class="snsbtn" href="#">
+			 							<i class="fab fa-facebook-f"></i>
+			 						</a>
+			 						<a class="snsbtn" href="#">
+			 							<i class="fab fa-twitter"></i>
+			 						</a>
+			 					    <a class="snsbtn" href="#">
+			 					    	<i class="fab fa-google"></i>
+			 					    </a>
+			 						<a class="snsbtn" href="#">
+			 							<i class="fab fa-instagram"></i>
+			 						</a>
+			 						<a class="snsbtn" href="#">
+			 							<i class="fab fa-youtube"></i>
+			 						</a>
+								 </div>
+					        </div>
+					    </div>
+				</div>
+				<div class="nav common_panel layer">
+					<div class="menu_title"><i class="fas fa-clipboard-list"></i>
+					 <span>Menu</span> 
+					</div>
+					<ul>
+						<li><a href="#">Tech Skills</a></li>
+						<li><a href="#">Education</a></li>
+						<li><a href="#">License</a></li>
+						<li><a href="#">Contact</a></li>		
+					</ul>
+				</div>
+				
+			</div>
+		</aside>
+
+		<selection>
+			<div class="cotent_wrap"></div>
+		</selection>
+	</div>
+
+</body>
+</html>

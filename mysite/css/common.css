@@ -1,0 +1,29 @@
+/*구글 웹폰트*/
+		@import url('https://fonts.googleapis.com/css?family=Noto+Serif+KR&display=swap');
+/*공통사항*/
+ 
+     * {box-sizing: border-box;}
+		body {
+
+			
+			font-family :'Noto Serif KR', serif; 
+			margin: 0;
+			padding: 0;
+			font-size: 14px;
+			color: #222222;	
+         background-color: #f1f1f1;	
+		}
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		a {
+			color: inherit; /*부모한테 상속받은 색상을 사용하세요 */
+			text-decoration: none;
+		
+		}
+			
+   
+
+      
