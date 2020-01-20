@@ -30,7 +30,7 @@
          margin: 0 10px;
          border-radius: 30%;
          
-         color:  #548D96;
+         color:  #1F8AD8;
          overflow: hidden;
          position: relative;
          text-align: center;
@@ -114,7 +114,7 @@
          left: 0;
          width: 100%;
          height: 100%;
-         background: #548D96;
+         background: #1F8AD8;
          transition: transform .5s;
          transform-origin: right;
          transform: scaleX(0);
