@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blossom : 회원가입</title>
+	<link rel="icon" type="image/x-icon" href="../img/naver/naversm.png">
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+   <script src="https://kit.fontawesome.com/66fbac40f5.js" crossorigin="anonymous"></script>
+   <style type="text/css">
+   	* {
+   		font-family: Dotum, '돋움' ,Helverica, sans-serif;
+   		box-sizing: border-box;
+   	}
+   	body, h1, h2, h3, h4, h5, h6, ul, p{
+   		margin: 0;
+   		padding: 0;
+   	}
+   	body { 
+   		background-color: white;
+   	       font-size: 12px;}
+   	ul { list-style: none; }
+   	a { text-decoration: none; color: inherit;}
+   	
+   	.user_sign_up {
+   		padding-top: 192px; 
+   	}
+   	.container {
+   		margin-right: auto;
+   		margin-left: auto;
+   		width: calc(100% - 80px);
+   		box-sizing: border-box;
+   		min-height: 1px;
+   		
+   	}
+   	.user_sign_up_form_wrap {
+   		width: 459px;
+   		margin: 0 auto;
+   		
+   		border color: 
+   	}
+   	.user_sign_up_title {
+   		font-size: 20px;
+   		font-weight: 700;
+   	}
+   	.hearder_content_logo_img {
+			display: block;
+			width: 183px;
+			height: 78px;			
+			margin-left:auto;
+			margin-right: auto;
+		}
+	.user_sign_up_form_group {
+		margin: 0 0 30px;
+		
+	}
+	.user_sign_up_form_group_label {
+		display: block;
+		margin: 0 0 12px;
+		font-size: 15px;
+		font-weight: 700;
+		color: #292929;
+		line-height: 21px;
+		word-break: keep-all;
+		
+	}
+	.user_sign_up_form_group_input {
+		margin: 10px 0 0;
+
+	}
+	.email_input {
+		display: flex;
+	}
+	.input_group {
+		flex: 1 0 auto;
+	}
+	.email_input_local, .email_input_domain {
+		position: relative;
+		flex: 1 1 0px;
+	}
+	.email_input .errored .form_control {
+		border-color: #f77;
+	}
+	.email_input .errored .form_control:focus {
+		outline: none;
+		box-shadow: 0 0 2px rgba(255, 119, 119, .5);
+	}
+	.form_control .focus_visible:focus {
+		outline: none;
+		box-shadow: 0 0 3px rgba(130, 224, 250, 0.5);
+	}
+	.email_input_domain > .form_control 
+	.email_input_local > .form_control {
+		width: 100%;
+	}
+	.email_input_domain> .form_control>option,
+	.email_input_local> .form_control>option {
+		color: #424242;
+	}
+	.user_sign_up_form_group_input
+	.form_control {
+		font-size: 15px;
+		border-radius: 4px;
+	}
+	.input_group .form_control {
+		
+	}
+	.form_control {
+		transition: .2s border-color, .2s box-shadow, .2s background-color;
+		display: block;
+		box-sizing: border-box;
+		height: 40px;
+		width: 100%;
+		padding: 0 15px;
+		line-height: 40px;
+		border: solid 1px #dbdbdb;
+		background-color: #ffffff;
+		color: #424242;
+		font-size: 12px;
+	}
+	.email_input_separator {
+		flex: 0 0 20px;
+		text-align: center;
+		line-height: 40px;
+		color: #dbdbdb;
+	}
+	.email_input_domain_expand {
+		    position: absolute;
+		    top: 10px;
+		    right: 10px;
+		    padding: 5px;
+		    background: none;
+		    border: none;
+		    font-size: 0;
+		    cursor: default;
+		    color: rgba(0,0,0,.3);
+	}
+   .user_sign_up_form_group_error {
+   	margin: 10px 0;
+   	font-size: 13px;
+   	line-height: 21px;
+   	color: #f77;
+	display: none;
+   }
+	   
+	.user_sign_up_form_group_description {
+		margin: 0;
+		font-size: 13px;
+		color: #757575;
+		line-height: 1.4;
+	}   
+	.int {
+   		display: block;
+   		position: relative;
+   		width: 100%;
+   		height: 29px;
+   		padding-right: 25px;
+   		line-height: 29px;
+   		border: none;
+   		background: #fff;
+   		font-size: 15px;
+   		z-index: 10;}
+
+   	.birthday_yy, .birthday_mm	{
+   		position: relative;
+		flex: 1 1 0px;
+   	}
+
+   	.birthday_yy > .form_control 
+	.birthday_mm > .form_control {
+		width: 100%;
+	}
+
+	.form_day {
+		display: block;
+		box-sizing: border-box;
+		height: 40px;
+		width: 100%;
+		padding: 0 15px;
+		line-height: 40px;
+		border: solid 1px #dbdbdb;
+		background-color: #ffffff;
+		color: #424242;
+		font-size: 12px;
+		border-radius: 4px;
+	}
+	.year_input_local, .month_input_domain, .day_input_local {
+		position: relative;
+		flex: 1 1 0px;
+
+	}
+	.day_iput {
+		display: flex;
+		justify-content: center;
+	}
+	.year_input_local,  .month_input_domain {
+		padding-right: 10px;
+	}
+
+	.btn_double_area {
+   		margin: 30px 0 9px;
+   	}
+
+   		.btn_type {
+   		display: block;
+   		width: 100%;
+   		padding: 21px 0 17px;
+   		font-size: 20px;
+   		font-weight: 700;
+   		text-align: center;
+   		cursor: pointer;
+   	}
+   	.btn_agree {
+   		color: white;
+   		background-color:  #40BF75;
+   	}
+   	.address_control{
+   		display: block;
+		box-sizing: border-box;
+		height: 40px;
+		width: 100%;
+		padding: 0 15px;
+		line-height: 40px;
+		border: solid 1px #dbdbdb;
+		background-color: #ffffff;
+		color: #424242;
+		font-size: 12px;
+   	}
+   	.address_flex {
+   		display: flex;
+   			
+   	}
+   	.address {
+   		margin-bottom: 10px;
+   	}
+	 	#footer {
+			padding: 15px 0;
+		}
+		#footer > ul {
+			margin: 0 auto 9px; /*상 좌우 하 */
+			text-align: center;			
+		}
+		#footer * {
+			font-size: 11px;
+			line-height: normal;
+			list-style: none;
+			color: #333;
+		}
+		#footer> ul > li {
+			display: inline;
+			padding: 0 5px 0 7px;
+			border-left: 1px solid #dadada;
+		}
+		#footer > ul > li > li:hover {
+			color: #1fbc02;
+			text-decoration: underline;
+		}
+		#footer ul li:first-child { /*모든 li 이 중에 첫번재만 */
+			border-left: 0px!important; /*!important - 제일 높은 레벨 , 자주쓰지는 말아야 한다 */
+		}
+
+		#footer ul li:first-child {
+			border-left: 0px;important;
+		}
+
+		#addr_logo {
+			width: 63px;
+			height: 11px;
+		}
+		#address {
+			margin: 0 auto;
+			text-align: center;			
+		}
+		#address * {
+			font : 9px verdana;
+		}
+		#address a {
+			font-weight: bold;			
+		}
+		#address a:hover {
+			color: #1fbc02;
+		}
+   </style>
+   
+</head>
+<body >
+	<section class="container user_sign_up">
+		<div class="user_sign_up_form_wrap">
+			
+			<div class=" sign_up_logo">
+				 <img class="hearder_content_logo_img" src="../../img/linkedin_banner_image_1.png" alt="로고이미지">
+			</div>
+			<form class="user_sign_up_form">
+				<div class="user_sign_up_form_group">
+					<div  class="user_sign_up_form_group_label">
+						이메일
+					</div>
+					<div class="user_sign_up_form_group_input">
+						<div class="user_sign_up_form_group">
+						<div class="input_group email_input errored">
+							<span class="email_input_local">
+								<input class="form_control focus_visible" value placeholder="이메일" size="1" data-focus_visible_added>
+							</span>
+							<span class="email_input_separator">@</span>
+							<span class="email_input_domain">
+								<select class="form_control empty">
+									<option selected value disabled>선택해 주세요</option>
+								<option value="naver.com">naver.com(네이버)</option>
+								<option value="daum.net">daum.net(다음 카카오)</option>
+								<option value="gmail.com">gmail.com(구글)</option>
+								<option value="nate.com">nate.com(네이트)</option>
+														
+								</select>
+								<button class="email_input_domain_expand" aria-label="초기화" type="button" tabindex="-1"></button>
+							</span>
+						</div>
+						</div>
+						<div class="user_sign_up_form_group_error">
+						필수 입력 항목 입니다.
+					    </div>
+					<div class="user_sign_up_form_group error">
+						<div  class="user_sign_up_form_group_label">
+						비밀번호
+	                         
+						</div>
+						<div class="user_sign_up_form_group_description">
+							8자이상 영문 대 소문자, 숫자, 특수문자를 사용하세요
+						</div>
+						<div class="user_sign_up_form_group_input">
+							<input type="password" value class="form_control error">
+						</div>
+
+						
+						<div class="user_sign_up_form_group_error">
+						필수 입력 항목 입니다.
+					    </div>
+
+						
+					</div>
+					<div class="user_sign_up_form_group error">
+						<div  class="user_sign_up_form_group_label">
+						비밀번호 재확인
+	                         
+						</div>
+						
+						<div class="user_sign_up_form_group_input">
+							<input type="password" value class="form_control error">
+						</div>
+
+						
+						<div class="user_sign_up_form_group_error">
+						필수 입력 항목 입니다.
+					    </div>
+
+						
+					</div>
+
+					<div class="user_sign_up_form_group error">
+						<div  class="user_sign_up_form_group_label">
+						이름
+	                         
+						</div>
+						
+						<div class="user_sign_up_form_group_input">
+							<input type="text" value class="form_control error">
+						</div>
+
+						
+						<div class="user_sign_up_form_group_error">
+						필수 입력 항목 입니다.
+					    </div>
+
+						
+					</div>
+					<div class="user_sign_up_form_group error">
+						<div  class="user_sign_up_form_group_label">
+						주소
+						</div>
+						<div class="user_sign_up_form_group_input">
+						<div class="address_flex">
+						<input class="address_control error" type="text" id="sample6_postcode" placeholder="우편번호">
+					    <span> <input class="address_control error" type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"></span><br></div>	
+						<input class="form_control error" type="text" id="sample6_address" placeholder="주소"><br>
+						<div class="address">
+						<input class="form_control error" type="text" id="sample6_detailAddress" placeholder="상세주소">
+						</div>
+						<input  class="form_control error" type="text" id="sample6_extraAddress" placeholder="참고항목">
+					</div>	
+				</div>
+
+
+					</div>
+					
+						<div class="user_sign_up_form_group error">
+						<div  class="user_sign_up_form_group_label">
+							연락처
+	                         
+						</div>
+						
+						<div class="user_sign_up_form_group_input">
+							<input type="tel" id="phone"  name="phone" class="form_control error" placeholder="-없이 입력 예)0101234567">
+						</div>
+
+						
+						<div class="user_sign_up_form_group_error">
+						필수 입력 항목 입니다.
+					    </div>
+
+						
+					</div>
+					</div>
+
+					<div class="btn_double_area">
+							<span><a href="#" class="btn_type btn_agree">가입하기</a></span>
+						</div>
+
+					</div>
+
+					
+
+				</div>
+
+				
+			</form>
+		</div>
+
+	</section>	
+	<footer>
+			<div id="footer">
+				<ul>
+					<li><a  hrdf='#'>이용약관"</a></li>
+					<li><strong><a href="#">개인정보처리방침</a></strong></li>
+					<li><a href="#">책임의 한계와 법적고지</a></li>
+					<li><a href="#">회원정보 고객센터</a></li>
+				</ul>
+
+				<div id="address">
+					<span>
+						<a href="https://www.naver.com">
+							<img id="addr_logo" src="../img/naver/naver_logo.png">
+						</a>
+					</span>
+					<span>copyright</span>
+					<span>@</span>
+					<span><strong><a href="#">NAVER Corp</a></strong></span>
+					<span>ALL Rights Reserved.</span>
+			</div>
+			<div id="footer"></div>
+		</footer>
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#selmail').change(function(){
+		var url = $(this).val();
+
+		if(url != 'directVal') {
+
+			$('#email_url').val(url).prop('readonly', true);
+
+		} else {
+			$('#email_url').val('').removeAttr('readonly').focus();
+		}
+		});
+	});
+
+	 $(document).on('focus', '.user_sign_up_form', function(){
+       $(this).css('border', '1.2px solid #f77;')
+   });
+</script>
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    function sample6_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var addr = ''; // 주소 변수
+                var extraAddr = ''; // 참고항목 변수
+
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
+
+                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                if(data.userSelectedType === 'R'){
+                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있고, 공동주택일 경우 추가한다.
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                    if(extraAddr !== ''){
+                        extraAddr = ' (' + extraAddr + ')';
+                    }
+                    // 조합된 참고항목을 해당 필드에 넣는다.
+                    document.getElementById("sample6_extraAddress").value = extraAddr;
+                
+                } else {
+                    document.getElementById("sample6_extraAddress").value = '';
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('sample6_postcode').value = data.zonecode;
+                document.getElementById("sample6_address").value = addr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById("sample6_detailAddress").focus();
+            }
+        }).open();
+    }
+
+</script>
+</html>
