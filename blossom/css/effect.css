@@ -1,0 +1,127 @@
+ /*Text에 밑줄 쳐지는 CSS 효과 */
+      .magicline:after {
+         content : '';
+         display: block; /*가로다 내꺼 */
+         width: 0;
+         height: 2.5px;
+         background-color: #7DD481;
+         transition: width .3s; /*하려고 하는 행위의 지연시간 */
+      }
+      .magicline:hover:after {
+         width: 100%;
+      }
+
+      /*판넬 3D CSS 효과 */
+      .layer{
+         box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.2)
+      }
+
+      /*SNS 버튼 애니메이션 CSS 효과*/
+      div.middle {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+      .snsbtn {
+         display: inline-block;
+         width: 45px;
+         height: 45px;
+         background-color: #f1f1f1;
+         margin: 0 10px;
+         border-radius: 30%;
+         
+         color:  #1F8AD8;
+         overflow: hidden;
+         position: relative;
+         text-align: center;
+      }
+      .snsbtn i {
+         line-height: 45px;
+         font-size: 20px;
+         transition: 0.2s linear;
+      }
+      .snsbtn:hover i { /*마우스를 hover 하면  */
+         transform: scale(1.3); /*아이콘이 커진다 */ 
+         color: white; }
+
+      .snsbtn::before{
+         content: "";
+         position: absolute;
+         width: 120%;
+         height: 120%;
+         background-color: pink;
+         transform: rotate(45deg);
+         left: -110%;
+         top: 90%;
+      }
+      .snsbtn:hover::before{
+         animation: aaa 0.7s 1;
+         top: -10%;
+         left: -10%;
+
+      }
+      @keyframes car {
+         0% {
+            left: -110%;
+            top: 90%;
+         }50% {
+            left: 10%;
+            top: -30%;
+         }100% {
+            left: -10%;
+            top: -10%;
+         }
+      }
+      /*네비게이션 Blur CSS 효과*/
+      ul {
+         margin: 0;
+         padding: 15px 0;
+         display: flex;
+         flex-direction: column;
+         width: 155px;
+      }
+      ul li {
+         list-style: none;
+         margin: 0 20px;
+         transition: 0.5s;
+      }
+      ul li a {
+         display: inline-block;
+         position: relative;
+         text-decoration: none;
+         padding: 5px;
+         font-size: 18px;
+         font-family: sans-serif;
+         color: #2F3138;
+         text-transform: uppercase;
+         transition: 0.5s;
+      }
+      ul:hover li a {
+         transform: scale(1.5);
+         opacity: .2;
+         filter: blur(1px);
+      }
+      ul li a:hover {
+         transform: scale(2);
+         opacity: 1;
+         filter: blur(0);
+         color: white;
+      }
+      ul li a:before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: #1F8AD8;
+         transition: transform .5s;
+         transform-origin: right;
+         transform: scaleX(0);
+         z-index: -1;
+      }
+      ul li a:hover:before {
+         transition: transform .5s;
+         transform-origin: left;
+         transform: scaleX(1);
+      }
