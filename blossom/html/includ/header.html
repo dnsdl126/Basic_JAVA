@@ -219,7 +219,8 @@
        padding: 7px 0px 6px 0px;
        outline: none;
       }
-      a#btn_login {
+      #btn_login {
+          border: none;
           display: block;
           background-color: #40BF75;
           color: white;
@@ -367,7 +368,7 @@
        <div class="login_close">
           <button><i class="fas fa-times"></i></button>
        </div>
-      <div id= content_layout>
+    <div id= content_layout>
          <header>
             <div  id="header_div">
                <a><img class="hearder_content_logo_img" src="../../img/linkedin_banner_image_1.png" alt="로고이미지"></a>
@@ -377,25 +378,27 @@
         <form class="frm_login">
             <div class="div_input" id="naver_id">
              <span class="input_box">
-               <input type="text"  id="login_id" name = "id" placeholder="아이디"  class="input_login" id="inputid">
+               <input type="email"  id="login_id" name = "id" placeholder="아이디"  class="input_login" id="inputid" required>
              </span>
             </div>
             <div class="div_input" id="naver_pw">
                
-               <input type="password" id="login_pw" name = "pw" placeholder="비밀전호" class="input_login" id="inputpw">              
+               <input type="password" id="login_pw" name = "pw" placeholder="비밀전호" class="input_login" id="inputpw" required minlength="6" maxlength="18">              
                 <span class="pw_eye">
                    <i class="fas fa-eye-slash"></i>
                 </span>
              </div>
-             </form>
+        
              <div >
-                <a id="btn_login" href="#">Login</a>
+                <button type = "submit" id="btn_login">Login</button>
              </div>
+
+        </form>
              <div class="sign_box">
                 <a class="sign_box_enter" href="#">아이디/비밀번호 찾기
                 <a class="sign_box_enter" href="#">회원가입</a>              
-             </div>
-             <selection class="SNS">
+            </div>
+            <selection class="SNS">
                 <h2 class = "sign_in_text">SNS계정으로 간편 로그인/회원가입</h2>
                 <div class="sns_list">
                    <a class="sns_list_enter" href="https://www.facebook.com/login">
@@ -419,17 +422,15 @@
                          비회원 주문 조회하기
                       </button>
                       
-                   </section>
-
-
-                  
-                   
+                   </section>                   
                 </div>
              </selection>
-         
-         
+       
       </div>        
      </div>
+
+
+         
     </div> 
 
 
