@@ -719,3 +719,72 @@ SELECT MAX(sal)
 FROM emp
 GROUP BY deptno
 
+
+
+-------------- 화장품 판매 사이트 
+-- 상품테이블
+DROP TABLE tbl_pdt;
+CREATE TABLE tbl_pdt(
+    pno NUMBER PRIMARY KEY,
+    pname VARCHAR2(500) NOT NULL,
+    ptype VARCHAR2(200),
+    pmemo VARCHAR2(1000),
+    price NUMBER DEFAULT 0,
+    avail_cnt NUMBER DEFAULT 0,
+    sale_cnt NUMBER DEFAULT 0,
+    p_img VARCHAR2(300),
+    regdate DATE DEFAULT SYSDATE
+);
+
+DROP SEQUENCE seq_pdt;
+CREATE SEQUENCE seq_pdt
+    START WITH 1
+    INCREMENT BY 1
+    NOCYCLE;
+    
+    
+INSERT INTO tbl_pdt(pno, pname, ptype, pmemo, price, avail_cnt, sale_cnt, p_img)
+VALUES(seq_pdt.NEXTVAL,'greentea 스킨','스킨','허브로 만든 저자극 스킨',14300,3,10, 'greentealoation.png');
+INSERT INTO tbl_pdt(pno, pname, ptype, pmemo, price, avail_cnt, sale_cnt, p_img)
+VALUES(seq_pdt.NEXTVAL,'greentea 로션','로션','허브로 만든 저자극 로션',14500,5,15, 'greenteatoner.png');
+INSERT INTO tbl_pdt(pno, pname, ptype, pmemo, price, avail_cnt, sale_cnt, p_img)
+VALUES(seq_pdt.NEXTVAL,'flonium 에센스','에센스','제라늄으로 만든 수분가득 에센스',25000,4,26, 'floniume.png');
+INSERT INTO tbl_pdt(pno, pname, ptype, pmemo, price, avail_cnt, sale_cnt, p_img)
+VALUES(seq_pdt.NEXTVAL,'moon flower 샴푸','샴푸',' 달맞이 꽃 향이 가득 한 샴푸',12500,3,27, 'moonflowershamp.png');
+INSERT INTO tbl_pdt(pno, pname, ptype, pmemo, price, avail_cnt, sale_cnt, p_img)
+VALUES(seq_pdt.NEXTVAL,'moon flower 린스','린스','달맞이 꽃 향이 가득 한 린스',14500,7,23, 'moonflowerli.png');
+INSERT INTO tbl_pdt(pno, pname, ptype, pmemo, price, avail_cnt, sale_cnt, p_img)
+VALUES(seq_pdt.NEXTVAL,'camellia  샴푸','샴푸','허브와 동백으로 만든 샴푸',12700,6,24, 'shampoo.png');
+INSERT INTO tbl_pdt(pno, pname, ptype, pmemo, price, avail_cnt, sale_cnt, p_img)
+VALUES(seq_pdt.NEXTVAL,'camellia  린스','린스','허브와 동백으로 만든 린스',12200,8,32, 'shampoo.png');
+INSERT INTO tbl_pdt(pno, pname, ptype, pmemo, price, avail_cnt, sale_cnt, p_img)
+VALUES(seq_pdt.NEXTVAL,'Mugunghwa 스킨','스킨','수분 가득 보습 스킨',11700,8,12, 'mogonwha (2).png');
+INSERT INTO tbl_pdt(pno, pname, ptype, pmemo, price, avail_cnt, sale_cnt, p_img)
+VALUES(seq_pdt.NEXTVAL,'Mugunghwa 로션','로션','수분 가득 보습 로션',12300,1,14, 'mogonwha (2).png');
+INSERT INTO tbl_pdt(pno, pname, ptype, pmemo, price, avail_cnt, sale_cnt, p_img)
+VALUES(seq_pdt.NEXTVAL,'lopodia 크림','크림','작약꽃 크림',24700,13,17, 'flonium.png');
+INSERT INTO tbl_pdt(pno, pname, ptype, pmemo, price, avail_cnt, sale_cnt, p_img)
+VALUES(seq_pdt.NEXTVAL,'lopodia 스킨','스킨','작약꽃 스킨',10300,5,13, 'mogonwha.png');
+INSERT INTO tbl_pdt(pno, pname, ptype, pmemo, price, avail_cnt, sale_cnt, p_img)
+VALUES(seq_pdt.NEXTVAL,'lopodia 로션','로션','작약꽃 로션',13300,3,22, 'lopodia.png' );
+
+
+
+SELECT * FROM tbl_pdt;
+
+SELECT rownum rnum, best.*
+FROM(SELECT * FROM tbl_pdt
+     ORDER BY sale_cnt DESC
+     ) best;
+     
+SELECT *
+FROM(SELECT rownum rnum, best.*
+     FROM(SELECT * FROM tbl_pdt
+          WHERE avail_cnt > 0
+          ORDER BY sale_cnt DESC
+          ) best
+    )
+WHERE rnum between 1 and 5;
+SELECT COUNT(*) FROM tbl_pdt;
+
+COMMIT;
